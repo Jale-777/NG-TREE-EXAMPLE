@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="app">
+
+    <h1> <span class="ng">NG</span> <span class="tree">TREE</span> <span class="example">EXAMPLE</span> </h1>
+
+    <div ng-controller="mainController">
+        <ul>
+            <li ng-repeat="data in treeData">
+                <p ng-click="expand(data)"><i class="fas fa-caret-right"></i> {{data.name}}</p>
+                <ul>
+                    <li ng-repeat="children in data.children" ng-if="children.visible">
+                        <p ng-click="expand(children)">
+                            <i class="fas fa-hashtag blue" ng-if="children.name.endsWith('css')"></i>
+                            <i class="fab fa-html5 orange"  ng-if="children.name.endsWith('html')"></i>
+                            <i class="fab fa-js ts" ng-if="children.name.endsWith('ts')"></i>
+                            <i class="fas fa-caret-right" ng-if="children.children"></i>
+                            {{children.name}}
+                        </p>
+                        <ul>
+                            <li ng-repeat="child in children.children" ng-if="child.visible">
+                                <p ng-click="expand(child)">
+                                    <i class="fas fa-hashtag blue" ng-if="child.name.endsWith('css')"></i>
+                                    <i class="fab fa-html5 orange"  ng-if="child.name.endsWith('html')"></i>
+                                    <i class="fab fa-js ts" ng-if="child.name.endsWith('ts')"></i>
+                                    <i class="fas fa-caret-right" ng-if="child.children"></i>
+                                    {{child.name}}
+                                </p>
+                                <ul>
+                                    <li ng-repeat="child2 in child.children" ng-if="child2.visible">
+                                        <p ng-click="expand(child2)">
+                                            <i class="fas fa-hashtag blue" ng-if="child2.name.endsWith('css')"></i>
+                                            <i class="fab fa-html5 orange"  ng-if="child2.name.endsWith('html')"></i>
+                                            <i class="fab fa-js ts" ng-if="child2.name.endsWith('ts')"></i>
+                                            <i class="fas fa-caret-right" ng-if="child2.children"></i>
+                                            {{child2.name}}
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

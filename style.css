@@ -1,0 +1,45 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+p:hover {
+    cursor: pointer;
+    background-color: rgb(39, 38, 38);
+}
+
+.blue {
+    color: cornflowerblue;
+    padding-right: 2px;
+}
+
+.orange {
+    color: orange;
+    padding-right: 2px;
+}
+
+.ts {
+    color: yellowgreen;
+    padding-right: 2px;
+}
+
+.ng {
+    color: cornflowerblue;
+}
+
+.tree{
+    color: orange;
+}
+
+.example {
+    color: yellowgreen;
+}
